@@ -4,7 +4,7 @@
 918 -> 1
 */
 
-//Функции
+//Функция
 int SearchsecondDigit(int number)
 {
     int firstDigit = (number / 100) * 100;
@@ -14,7 +14,7 @@ int SearchsecondDigit(int number)
 }
 
 
-//Программа
+//Тело Программы
 
 Console.WriteLine("Введите трехзначное целое положительное число:");
 int num = Convert.ToInt32(Console.ReadLine());

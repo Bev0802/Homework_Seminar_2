@@ -1,21 +1,39 @@
-﻿/* Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+﻿/* Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
+что третьей цифры нет.
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6 */
 
-//Функции 
+Console.WriteLine("Введите целое число:");
+int num = Convert.ToInt32(Console.ReadLine());
+int thirdDigit = num;
+//Фукция
 int SearchthirdDigit(int number)
 {
-    int firstDigit = (number / 100) * 100;
-    int thirdDigit = number % 100;
-    int secondDigit = ((number - firstDigit - thirdDigit)/10);
+    int thirdDigit = number % 10;
     return thirdDigit;
 }
 
-//Тело программы
+//Тело программы////////////////////
 
-Console.WriteLine("Введите целое положительное число:");
-int num = Convert.ToInt32(Console.ReadLine());
+//Проверка на наличее третьей цифры.
+if ((num / 100) > 0)
+{
+    Console.WriteLine($"Вы вели число {num}. Найдем третью цифру!");
 
-int thirdDigit = SearchthirdDigit(num);
-Console.Write($"Вторая цифра числа {num}: {thirdDigit}");
+}
+else
+{
+    Console.WriteLine("В этом чиле третьей цифры нет!");
+}
+
+//Приведение числа в трехзначное.
+while ((thirdDigit / 1000) != 0)
+{
+    thirdDigit = num / 10;
+    num = thirdDigit;
+}
+
+//Выведение на печать тетьей
+int result = SearchthirdDigit(thirdDigit);
+Console.WriteLine(result);

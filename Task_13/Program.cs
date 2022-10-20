@@ -6,11 +6,18 @@
 
 Console.WriteLine("Введите целое число:");
 int num = Convert.ToInt32(Console.ReadLine());
+num = Math.Abs(num);
 int thirdDigit = num;
-//Фукция
+//Фукция которая находит третье число из любого целого положительного числа.
 int SearchthirdDigit(int number)
 {
-    int thirdDigit = number % 10;
+    int thirdDigit = number;
+    while ((thirdDigit / 1000) != 0)
+{
+    thirdDigit = number / 10;
+    number = thirdDigit;
+}
+    thirdDigit = number % 10;
     return thirdDigit;
 }
 
@@ -24,15 +31,11 @@ if ((num / 100) > 0)
 }
 else
 {
-    Console.WriteLine("В этом чиле третьей цифры нет!");
+    Console.WriteLine("В этом чиле третьей цифры нет!"); 
+    return;   
 }
 
-//Приведение числа в трехзначное.
-while ((thirdDigit / 1000) != 0)
-{
-    thirdDigit = num / 10;
-    num = thirdDigit;
-}
+
 
 //Выведение на печать тетьей
 int result = SearchthirdDigit(thirdDigit);

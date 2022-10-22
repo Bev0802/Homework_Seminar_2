@@ -6,13 +6,13 @@
 */
 
 //Функция расчета третьего числа.
-int SearchsecondDigit(int number)
+/* int SearchsecondDigit(int number)
 {
     int firstDigit = (number / 100) * 100;
     int thirdDigit = number % 10;
     int secondDigit = ((number - firstDigit - thirdDigit) / 10);
     return secondDigit;
-}
+} */
 
 //Программа
 
@@ -26,10 +26,13 @@ if ((num / 100) > 0 && ((num / 1000) == 0))
 }
 else
 {
-    Console.WriteLine("Не верно, нужно ввести трехзначное число.");
+    Console.WriteLine("Не верно, нужно ввести положительное трехзначное число.");
     return;
 }
 
-int secondDigit = SearchsecondDigit(num);
+//предложение перподавателя
+int secondDigit = num / 10 % 10;
+
+//int secondDigit = SearchsecondDigit(num);
 Console.Write($"Вторая цифра числа {num}: {secondDigit}");
 
